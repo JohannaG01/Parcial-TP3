@@ -3,20 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/loginFragment">
-
+    app:startDestination="@id/menuFragment">
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.example.parcial_tp3.Fragments.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" />
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.parcial_tp3.Fragments.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_menuFragment"
-            app:destination="@id/menuFragment" />
-    </fragment>
 </navigation>
