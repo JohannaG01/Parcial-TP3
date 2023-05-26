@@ -24,12 +24,12 @@ class CarsFragment : Fragment() {
     ): View? {
         val thisView = inflater.inflate(R.layout.fragment_cars, container, false)
 
-        val recyclerViewCars = thisView.findViewById<RecyclerView>(R.id.rec_cars)
+        val recycleCars = thisView.findViewById<RecyclerView>(R.id.recycle_view_cars)
 
         for(i in 1..3){
             carList.add(Car("Auto $i", "null", "null", 2020, 4))
         }
-        recyclerViewCars.adapter = CarListAdapter(carList)
+        recycleCars.adapter = CarListAdapter(carList)
 
         return thisView
     }

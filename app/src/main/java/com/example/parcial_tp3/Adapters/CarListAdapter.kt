@@ -22,6 +22,6 @@ class CarListAdapter(
 
     override fun onBindViewHolder(holder: CarViewHolder, position: Int) {
         val car = carList[position]
-        holder.setName(car.name)
+        holder.textName.text = car.name
     }
 }
