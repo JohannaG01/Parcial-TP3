@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ProgressBar
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3.APIServiceBuilder.APIServiceBuilder
@@ -42,6 +44,12 @@ class MenuFragment : Fragment() {
         progressBar.visibility = View.VISIBLE
         recycleBrands.visibility = View.GONE
         getBrands()
+
+
+        thisView.findViewById<Button>(R.id.btn_to_cars).setOnClickListener {
+            val action = MenuFragmentDirections.actionMenuFragmentToCarsFragment()
+            this.findNavController().navigate(action)
+        }
         return thisView
     }
 

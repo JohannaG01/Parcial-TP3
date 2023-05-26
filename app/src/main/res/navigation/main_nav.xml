@@ -8,5 +8,14 @@
         android:id="@+id/menuFragment"
         android:name="com.example.parcial_tp3.Fragments.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_carsFragment"
+            app:destination="@id/carsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carsFragment"
+        android:name="com.example.parcial_tp3.Fragments.CarsFragment"
+        android:label="fragment_cars"
+        tools:layout="@layout/fragment_cars" />
 </navigation>
