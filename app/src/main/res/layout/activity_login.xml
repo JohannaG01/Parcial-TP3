@@ -8,7 +8,7 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/imageLogo"
+        android:id="@+id/image_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/main_logo" />
 
     <EditText
-        android:id="@+id/textNombre"
+        android:id="@+id/text_username"
         android:layout_width="348dp"
         android:layout_height="59dp"
         android:layout_marginStart="32dp"
@@ -29,16 +29,16 @@
         android:background="@drawable/background_text_login"
         android:fontFamily="@font/poppins_regular"
         android:gravity="center"
-        android:hint="@string/Nombre"
+        android:hint="@string/Username"
         android:inputType="text"
         android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/image_logo" />
 
     <EditText
-        android:id="@+id/textPassword"
+        android:id="@+id/text_password"
         android:layout_width="348dp"
         android:layout_height="59dp"
         android:layout_marginStart="32dp"
@@ -53,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/text_username" />
 
     <Button
         android:id="@+id/btn_login"
@@ -72,7 +72,7 @@
         app:layout_constraintVertical_bias="0.727" />
 
     <TextView
-        android:id="@+id/textForgottenPass"
+        android:id="@+id/text_forgot_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="133dp"
@@ -86,7 +86,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPassword"
+        app:layout_constraintTop_toBottomOf="@+id/text_password"
         app:layout_constraintVertical_bias="0.111" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
