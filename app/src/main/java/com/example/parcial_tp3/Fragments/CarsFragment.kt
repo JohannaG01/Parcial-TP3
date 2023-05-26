@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.parcial_tp3.Adapters.CarListAdapter
-import com.example.parcial_tp3.Entities.Car
+import com.example.parcial_tp3.RecycleViewAdapter.CarListAdapter
+import com.example.parcial_tp3.Model.Car
 import com.example.parcial_tp3.R
 
 class CarsFragment : Fragment() {

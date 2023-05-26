@@ -1,4 +1,4 @@
-package com.example.parcial_tp3.Entities
+package com.example.parcial_tp3.Model
 import android.content.Context
 import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
