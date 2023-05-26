@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3.APIServiceBuilder.APIServiceBuilder
@@ -14,23 +15,17 @@ import com.example.parcial_tp3.Model.Brand
 import com.example.parcial_tp3.Model.CarResponse
 import com.example.parcial_tp3.R
 import com.example.parcial_tp3.RecycleViewAdapter.BrandAdapter
+import com.example.parcial_tp3.ViewModel.MenuFragmentViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 
 class MenuFragment : Fragment() {
+    private val viewModel: MenuFragmentViewModel by viewModels()
     lateinit var progressBar: ProgressBar
     lateinit var recycleBrands: RecyclerView
     lateinit var thisView: View
-    val brandOrder: LinkedHashSet<String> = LinkedHashSet()
-    var brandList: MutableList<Brand> = ArrayList()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        loadBrands()
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,60 +37,24 @@ class MenuFragment : Fragment() {
 
         progressBar.visibility = View.VISIBLE
         recycleBrands.visibility = View.GONE
-        getBrands()
+
+        viewModel.brandList.observe(viewLifecycleOwner) { brands ->
+            if (brands.isNotEmpty()) {
+                progressBar.visibility = View.GONE
+                recycleBrands.visibility = View.VISIBLE
+                showData(brands)
+            }
+        }
+
+        viewModel.getBrands()
+
         return thisView
     }
 
-    private fun loadBrands(){
-        brandOrder.add("Macerati")
-        brandOrder.add("Mercedes")
-        brandOrder.add("TOGG")
-        brandOrder.add("Porsche")
-        brandOrder.add("BMW")
-        brandOrder.add("Renault")
-    }
-    private fun getBrands(){
-        if (brandList.size == brandOrder.size){
-            progressBar.visibility = View.GONE
-            recycleBrands.visibility = View.VISIBLE
-            showData()
-        }
-        else{
-            val service = APIServiceBuilder.create()
-
-            for (brandName in brandOrder) {
-                service.getCars(brandName).enqueue(object : Callback<List<CarResponse>> {
-                    override fun onResponse(
-                        call: Call<List<CarResponse>>,
-                        response: Response<List<CarResponse>>
-                    ) {
-                        Log.i("RETROFIT", "$brandName Amount: ${response.body()?.size}")
-                        addBrand(brandName, "${brandName.lowercase()}_logo", response.body()!!)
-                        if (brandList.size == brandOrder.size) {
-                            progressBar.visibility = View.GONE
-                            recycleBrands.visibility = View.VISIBLE
-                            showData()
-                        }
-                    }
-
-                    override fun onFailure(call: Call<List<CarResponse>>, t: Throwable) {
-                        Log.e("RETROFIT", "An unexpected error occurred while requesting brand: ${t.message}")
-                    }
-                })
-            }
-        }
-    }
-    private fun addBrand(brand: String, brandLogo: String, cars: List<CarResponse>){
-        val brand = Brand(brandLogo, brand, cars.size)
-        brandList.add(brand)
-    }
-
-    private fun showData(){
+    private fun showData(brandList: List<Brand>) {
         recycleBrands.setHasFixedSize(true)
-
         val linearLayoutManager = LinearLayoutManager(context)
         linearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
-
         recycleBrands.layoutManager = linearLayoutManager
         recycleBrands.adapter = BrandAdapter(brandList)
     }
