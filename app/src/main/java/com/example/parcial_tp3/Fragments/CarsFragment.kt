@@ -27,7 +27,7 @@ class CarsFragment : Fragment() {
         val recycleCars = thisView.findViewById<RecyclerView>(R.id.recycle_view_cars)
 
         for(i in 1..3){
-            carList.add(Car("Auto $i", "null", "null", 2020, 4))
+            carList.add(Car("Auto $i", "null", "null", 2020, 4, ""))
         }
         recycleCars.adapter = CarListAdapter(carList)
 

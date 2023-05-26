@@ -5,5 +5,9 @@
     <string name="premierrent">PremierRentCar</string>
     <string name="brands">Marcas</string>
     <string name="login">Login</string>
+    <string name="Home">Home</string>
+    <string name="Profile">Profile\n</string>
+    <string name="Search">Search</string>
+    <string name="Cars">Cars</string>
 
 </resources>
