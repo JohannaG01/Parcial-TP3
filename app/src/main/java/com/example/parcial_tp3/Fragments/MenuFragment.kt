@@ -27,6 +27,7 @@ class MenuFragment : Fragment() {
     var brandList: MutableList<Brand> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        loadBrands()
         super.onCreate(savedInstanceState)
     }
 
@@ -54,30 +55,35 @@ class MenuFragment : Fragment() {
         brandOrder.add("Renault")
     }
     private fun getBrands(){
-        loadBrands()
-        val service = APIServiceBuilder.create()
-
-        for (brandName in brandOrder) {
-            service.getCars(brandName).enqueue(object : Callback<List<CarResponse>> {
-                override fun onResponse(
-                    call: Call<List<CarResponse>>,
-                    response: Response<List<CarResponse>>
-                ) {
-                    Log.i("RETROFIT", "$brandName Amount: ${response.body()?.size}")
-                    addBrand(brandName, "${brandName.lowercase()}_logo", response.body()!!)
-                    if (brandList.size == brandOrder.size) {
-                        progressBar.visibility = View.GONE // Oculta la ProgressBar
-                        recycleBrands.visibility = View.VISIBLE // Muestra el RecyclerView
-                        showData()
-                    }
-                }
-
-                override fun onFailure(call: Call<List<CarResponse>>, t: Throwable) {
-                    //TODO
-                }
-            })
+        if (brandList.size == brandOrder.size){
+            progressBar.visibility = View.GONE
+            recycleBrands.visibility = View.VISIBLE
+            showData()
         }
+        else{
+            val service = APIServiceBuilder.create()
 
+            for (brandName in brandOrder) {
+                service.getCars(brandName).enqueue(object : Callback<List<CarResponse>> {
+                    override fun onResponse(
+                        call: Call<List<CarResponse>>,
+                        response: Response<List<CarResponse>>
+                    ) {
+                        Log.i("RETROFIT", "$brandName Amount: ${response.body()?.size}")
+                        addBrand(brandName, "${brandName.lowercase()}_logo", response.body()!!)
+                        if (brandList.size == brandOrder.size) {
+                            progressBar.visibility = View.GONE
+                            recycleBrands.visibility = View.VISIBLE
+                            showData()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<List<CarResponse>>, t: Throwable) {
+                        Log.e("RETROFIT", "An unexpected error occurred while requesting brand: ${t.message}")
+                    }
+                })
+            }
+        }
     }
     private fun addBrand(brand: String, brandLogo: String, cars: List<CarResponse>){
         val brand = Brand(brandLogo, brand, cars.size)
