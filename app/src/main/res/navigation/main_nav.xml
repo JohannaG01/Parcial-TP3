@@ -16,7 +16,7 @@
         android:label="fragment_cars"
         tools:layout="@layout/fragment_cars" />
     <fragment
-        android:id="@+id/profileFragment2"
+        android:id="@+id/profileFragment"
         android:name="com.example.parcial_tp3.Fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
