@@ -1,7 +1,7 @@
 package com.example.parcial_tp3
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -15,10 +15,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-
         bottomNavView = findViewById(R.id.bottom_bar)
-
         NavigationUI.setupWithNavController(bottomNavView, navHostFragment.navController)
+    }
 
+    fun getUsername(): String? {
+        return intent.getStringExtra("username")
     }
 }
