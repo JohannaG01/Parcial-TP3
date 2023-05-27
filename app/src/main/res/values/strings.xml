@@ -8,4 +8,8 @@
     <string name="ForgottenPassword">Olvide la contraseña</string>
     <string name="premierrent">PremierRentCar</string>
     <string name="brands">Marcas</string>
+    <string name="Home">Home</string>
+    <string name="Profile">Profile\n</string>
+    <string name="Search">Search</string>
+    <string name="Cars">Cars</string>
 </resources>
