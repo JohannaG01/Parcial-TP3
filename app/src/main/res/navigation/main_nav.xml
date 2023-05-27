@@ -9,6 +9,7 @@
         android:name="com.example.parcial_tp3.Fragments.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" />
+
     <fragment
         android:id="@+id/carsFragment"
         android:name="com.example.parcial_tp3.Fragments.CarsFragment"
@@ -19,4 +20,5 @@
         android:name="com.example.parcial_tp3.Fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+
 </navigation>
