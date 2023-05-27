@@ -12,4 +12,8 @@
     <string name="Profile">Profile\n</string>
     <string name="Search">Search</string>
     <string name="Cars">Cars</string>
+    <string name="bmw">
+    BMW Grand Coupe
+    </string>
+
 </resources>

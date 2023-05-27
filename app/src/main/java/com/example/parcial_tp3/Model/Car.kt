@@ -9,7 +9,7 @@ class Car(
     val transmission: String,
     val fuel: String,
     val year: Int,
-    val seats: Int,
+    val seats: String,
     val logo: String
 ) {
     fun getLogoDrawable(context: Context): Drawable? {
