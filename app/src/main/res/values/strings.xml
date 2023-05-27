@@ -13,4 +13,8 @@
     <string name="cars">Cars</string>
     <string name="search_vehicles">Buscador de vehiculos</string>
     <string name="notifications">Notificaciones</string>
+    <string name="sports">Deportivos</string>
+    <string name="suv">SUV</string>
+    <string name="electrical">Eléctricos</string>
+    <string name="filter">Filtro</string>
 </resources>
