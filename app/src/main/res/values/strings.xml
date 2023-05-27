@@ -6,4 +6,6 @@
     <string name="Username">Usuario</string>
     <string name="Password">Contraseña</string>
     <string name="ForgottenPassword">Olvide la contraseña</string>
+    <string name="premierrent">PremierRentCar</string>
+    <string name="brands">Marcas</string>
 </resources>
