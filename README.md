@@ -4,13 +4,21 @@
 
 # Parcial TP3 - BE - 2023 - B - GRUPO  1
 
-
-
 [Enunciado](  https://docs.google.com/presentation/d/1OYMuU3gyAONdrbR3_OKLIQpt5ie7_eTZL59Oqi5n-_o)
 
 [Maquetao figma](https://www.figma.com/file/NsccV3JEb30VKtZb7CNguS/Premier-RentCar-ORT-Parcial?type=design&node-id=0%3A1&t=RJERcoLuINxeP0el-1)
 
 [API Ninja](https://api-ninjas.com/api/cars)
+
+## Integrantes Grupo 1
+
+| Nombre y Apellido  | Correo Electronico         | Usuario Github |
+| ------------------ | -------------------------- |----------------|
+| Ezequiel Hoyos     | ezequielhoyos@outlook.com  | ezequielhs     |
+| Facundo Pradells   | facundopradells@gmail.com  | PseudoEmpirico |
+| Francisco Rodrigo  | f.rodrigo18@gmail.com      | Frodrigo18     |
+| Juan Ferreyros     | juansferreyros@gmail.com   | JuanFerreyros  |
+| Johanna Gendler    | j.gendler.g@gmail.com      | JohannaG01     |
 
 ## Tecnoligias
 
@@ -59,3 +67,5 @@
 3. Navegación (Nav Graph, Navigation Drawer & ButtomNavView).
 4. Listado de Personajes (Vista reciclable: Adapter & Holder).
 5. Retrofit.
+
+
