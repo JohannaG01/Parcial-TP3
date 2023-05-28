@@ -11,11 +11,12 @@
 
         <SearchView
             android:id="@+id/searchView"
-            android:layout_width="355sp"
-            android:layout_height="50sp"
+            android:layout_width="356dp"
+            android:layout_height="51dp"
             android:layout_marginTop="12sp"
             android:background="@drawable/search_rounded"
             android:iconifiedByDefault="false"
+            android:showDividers="none"
             android:queryHint="@string/search_vehicles"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.553"

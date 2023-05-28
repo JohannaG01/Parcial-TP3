@@ -17,4 +17,7 @@
     <string name="suv">SUV</string>
     <string name="electrical">Eléctricos</string>
     <string name="filter">Filtro</string>
+    <string name="generals">Generales</string>
+    <string name="dark_mode">Modo Oscuro</string>
+    <string name="configuration">Configuración</string>
 </resources>
