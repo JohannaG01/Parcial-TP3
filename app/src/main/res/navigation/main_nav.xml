@@ -3,20 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/loginFragment">
-
+    app:startDestination="@id/menuFragment">
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.example.parcial_tp3.Fragments.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.parcial_tp3.Fragments.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_menu" >
         <action
-            android:id="@+id/action_loginFragment_to_menuFragment"
-            app:destination="@id/menuFragment" />
+            android:id="@+id/action_menuFragment_to_carsFragment"
+            app:destination="@id/carsFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/carsFragment"
+        android:name="com.example.parcial_tp3.Fragments.CarsFragment"
+        android:label="fragment_cars"
+        tools:layout="@layout/fragment_cars" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.parcial_tp3.Fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.parcial_tp3.Fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.example.parcial_tp3.Fragments.FavouritesFragment"
+        android:label="fragment_favourites"
+        tools:layout="@layout/fragment_favourites" />
+
 </navigation>

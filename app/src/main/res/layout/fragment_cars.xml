@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Fragments.CarsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Cars Fragment" />
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.CarsFragment"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:background="@drawable/inner_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-</FrameLayout>
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="356dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="12sp"
+                android:background="@drawable/search_rounded"
+                android:iconifiedByDefault="false"
+                android:showDividers="none"
+                android:queryHint="@string/search_vehicles"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.553"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_view_cars"
+                android:layout_width="356dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="36sp"
+                android:layout_marginTop="28sp"
+                android:layout_marginRight="36sp"
+                android:elevation="18sp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/searchView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.6"
+
+                />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
