@@ -11,21 +11,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="356dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="12sp"
+                android:background="@drawable/search_rounded"
+                android:iconifiedByDefault="false"
+                android:showDividers="none"
+                android:queryHint="@string/search_vehicles"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.553"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycle_view_cars"
-                android:layout_width="365dp"
+                android:layout_width="356dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="26dp"
-                android:layout_marginBottom="56dp"
+                android:layout_marginLeft="36sp"
+                android:layout_marginTop="28sp"
+                android:layout_marginRight="36sp"
+                android:elevation="18sp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-        </LinearLayout>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.6"
+
+                />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
