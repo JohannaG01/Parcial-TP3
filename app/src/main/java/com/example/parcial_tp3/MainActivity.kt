@@ -2,17 +2,11 @@ package com.example.parcial_tp3
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.view.MenuItem
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
-import com.example.parcial_tp3.Fragments.FavouritesFragment
-import com.example.parcial_tp3.Fragments.ProfileFragment
-import com.example.parcial_tp3.Fragments.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.ui.setupWithNavController
+import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -34,10 +28,12 @@ class MainActivity : AppCompatActivity() {
 
         setUpDrawerLayout()
 
+    }
+
     fun getUsername(): String? {
         return intent.getStringExtra("username")
     }
-    }
+
     private fun setUpDrawerLayout() {
         val navController = navHostFragment.navController
 
