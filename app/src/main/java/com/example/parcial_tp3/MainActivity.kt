@@ -62,6 +62,10 @@ class MainActivity : AppCompatActivity() {
 
         navigationView.setupWithNavController(navController)
 
+        val headerView = navigationView.getHeaderView(0)
+        val txtHeaderName = headerView.findViewById<TextView>(R.id.header_name)
+        txtHeaderName.text = getUsername().toString()
+
         navController.addOnDestinationChangedListener { _, _, _ ->
             supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
         }
