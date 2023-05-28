@@ -11,8 +11,8 @@
 
         <SearchView
             android:id="@+id/searchView"
-            android:layout_width="355sp"
-            android:layout_height="50sp"
+            android:layout_width="356dp"
+            android:layout_height="51dp"
             android:layout_marginTop="12sp"
             android:background="@drawable/search_rounded"
             android:iconifiedByDefault="false"

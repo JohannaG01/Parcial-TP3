@@ -8,7 +8,13 @@
         android:id="@+id/menuFragment"
         android:name="com.example.parcial_tp3.Fragments.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_carsFragment"
+            app:destination="@id/carsFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
     <fragment
         android:id="@+id/carsFragment"
@@ -20,5 +26,10 @@
         android:name="com.example.parcial_tp3.Fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.parcial_tp3.Fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 
 </navigation>
