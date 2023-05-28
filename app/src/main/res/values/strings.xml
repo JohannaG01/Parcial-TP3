@@ -17,7 +17,13 @@
     <string name="suv">SUV</string>
     <string name="electrical">Eléctricos</string>
     <string name="filter">Filtro</string>
+    <string name="profileDrawer">Profile</string>
+    <string name="settings">Configuración</string>
+    <string name="favourites">Favoritos</string>
+    <string name="header_hello">Hola</string>
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
+    <string name="coming_soon">Proximamente</string>
     <string name="generals">Generales</string>
     <string name="dark_mode">Modo Oscuro</string>
-    <string name="configuration">Configuración</string>
 </resources>
