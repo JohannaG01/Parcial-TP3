@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -24,8 +25,10 @@ class MainActivity : AppCompatActivity() {
 
         val premierrentLogo = findViewById<ImageView>(R.id.premier_rent_logo)
         val txtConfiguration = findViewById<TextView>(R.id.txt_configuration)
+        val imgMenu = findViewById<ImageView>(R.id.open_drawer)
 
-        navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         bottomNavView = findViewById(R.id.bottom_bar)
         NavigationUI.setupWithNavController(bottomNavView, navHostFragment.navController)
 
@@ -37,6 +40,10 @@ class MainActivity : AppCompatActivity() {
                 premierrentLogo.visibility = View.VISIBLE
                 txtConfiguration.visibility = View.GONE
             }
+        }
+
+        imgMenu.setOnClickListener {
+            drawerLayout.openDrawer(GravityCompat.START)
         }
 
         drawerLayout = findViewById(R.id.drawerLayout)
@@ -56,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         navigationView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, _, _ ->
-            supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_launcher_background)
+            supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
         }
     }
 }

@@ -11,22 +11,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/open_drawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
         <TextView
             android:id="@+id/txt_configuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/configuration"
+            android:layout_marginTop="24dp"
+            android:text="@string/settings"
             android:textColor="#001D42"
             android:textSize="23sp"
-            android:visibility="invisible"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="122dp"
-            android:layout_marginTop="24dp"
-            tools:layout_editor_absoluteY="24dp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="122dp"
+            tools:layout_editor_absoluteY="24dp"></TextView>
 
         <ImageView
             android:id="@+id/premier_rent_logo"
