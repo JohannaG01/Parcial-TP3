@@ -24,4 +24,6 @@
     <string name="open_drawer">open</string>
     <string name="close_drawer">close</string>
     <string name="coming_soon">Proximamente</string>
+    <string name="generals">Generales</string>
+    <string name="dark_mode">Modo Oscuro</string>
 </resources>

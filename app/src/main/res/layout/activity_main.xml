@@ -11,8 +11,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/txt_configuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/configuration"
+            android:textColor="#001D42"
+            android:textSize="23sp"
+            android:visibility="invisible"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="122dp"
+            android:layout_marginTop="24dp"
+            tools:layout_editor_absoluteY="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
         <ImageView
-            android:id="@+id/image_logo"
+            android:id="@+id/premier_rent_logo"
             android:layout_width="198dp"
             android:layout_height="27dp"
             android:layout_marginStart="65dp"
