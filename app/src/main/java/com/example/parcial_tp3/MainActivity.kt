@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.example.parcial_tp3.Fragments.FavouritesFragment
 import com.example.parcial_tp3.Fragments.ProfileFragment
 import com.example.parcial_tp3.Fragments.SettingsFragment
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var bottomNavView: BottomNavigationView
     private lateinit var navHostFragment: NavHostFragment
-    lateinit var toggle: ActionBarDrawerToggle
+    lateinit var navigationView: NavigationView
     lateinit var drawerLayout: DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,43 +33,18 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(bottomNavView, navHostFragment.navController)
 
         drawerLayout = findViewById(R.id.drawerLayout)
-        val navView: NavigationView = findViewById(R.id.navigationView)
+        navigationView = findViewById(R.id.nav_view)
 
-        toggle =
-            ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer)
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        navView.setNavigationItemSelectedListener {
-
-            it.isChecked = true
-
-            when (it.itemId) {
-                R.id.nav_profile -> replaceFragment(ProfileFragment(), it.title.toString())
-                R.id.nav_settings -> replaceFragment(SettingsFragment(), it.title.toString())
-                R.id.nav_favourites -> replaceFragment(FavouritesFragment(), it.title.toString())
-            }
-            true
-        }
+        setUpDrawerLayout()
 
     }
+    private fun setUpDrawerLayout() {
+        val navController = navHostFragment.navController
 
-    private fun replaceFragment(fragment: Fragment, title: String) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragmentContainerView, fragment)
-        fragmentTransaction.commit()
-        drawerLayout.closeDrawers()
-        setTitle(title)
-    }
+        navigationView.setupWithNavController(navController)
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true
+        navController.addOnDestinationChangedListener { _, _, _ ->
+            supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_launcher_background)
         }
-
-        return super.onOptionsItemSelected(item)
     }
 }

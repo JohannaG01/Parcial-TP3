@@ -18,4 +18,5 @@
     <string name="header_hello">Hola</string>
     <string name="open_drawer">open</string>
     <string name="close_drawer">close</string>
+    <string name="coming_soon">Proximamente</string>
 </resources>
